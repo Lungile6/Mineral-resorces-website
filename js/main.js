@@ -100,5 +100,58 @@
         button.parent().parent().find('input').val(newVal);
     });
     
+
+    // Responsive Navbar Toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+
+        if (navbarToggler && navbarCollapse) {
+            navbarToggler.addEventListener('click', function() {
+                navbarCollapse.classList.toggle('show');
+            });
+        }
+    });
+
+    // Carousel Swipe Support
+    $('.carousel').on('touchstart', function(event) {
+        const xClick = event.originalEvent.touches[0].pageX;
+        $(this).one('touchmove', function(event) {
+            const xMove = event.originalEvent.touches[0].pageX;
+            const sensitivityInPx = 5;
+
+            if (Math.floor(xClick - xMove) > sensitivityInPx) {
+                $(this).carousel('next');
+            } else if (Math.floor(xClick - xMove) < -sensitivityInPx) {
+                $(this).carousel('prev');
+            }
+        });
+        $(this).on('touchend', function() {
+            $(this).off('touchmove');
+        });
+    });
+
+    // Smooth Scroll for Back to Top Button
+    $('.back-to-top').click(function() {
+        $('html, body').animate({ scrollTop: 0 }, 'slow');
+        return false;
+    });
+
+    // Form Validation
+    $('form').on('submit', function(event) {
+        const form = $(this);
+        if (form[0].checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+        form.addClass('was-validated');
+    });
+
+    // Responsive Tabs
+    $('.nav-tabs a').on('click', function(e) {
+        e.preventDefault();
+        $(this).tab('show');
+    });
+
 })(jQuery);
 
