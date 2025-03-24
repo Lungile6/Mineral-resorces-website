@@ -1,4 +1,5 @@
 # Raw to Richies Africa
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Overview
 Raw to Richies Africa is an innovative e-commerce platform dedicated to connecting African countries through the trade of natural resources and raw materials. Our mission is to promote sustainable practices, support local artisans, and enhance economic growth across the continent.
