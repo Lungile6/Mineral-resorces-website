@@ -1046,6 +1046,21 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <script>
+    document.querySelector('#profileForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const formData = new FormData(this);
+        fetch('/api/profile', {
+            method: 'PUT',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Update the UI with the response
+        });
+    });
+    </script>
 </body>
 
 </html>

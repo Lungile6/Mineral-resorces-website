@@ -142,23 +142,260 @@
             <div class="col-lg-2">
 <div class="sidebar">
                     <h2 class="text-white text-center py-4">Admin Menu</h2>
-                    <a href="#"><i class="fas fa-tachometer-alt mr-2"></i>Dashboard</a>
-                    <a href="#"><i class="fas fa-box mr-2"></i>Manage Products</a>
-                    <a href="#"><i class="fas fa-shopping-cart mr-2"></i>Manage Orders</a>
-                    <a href="#"><i class="fas fa-users mr-2"></i>Manage Users</a>
-                    <a href="#"><i class="fas fa-chart-bar mr-2"></i>Reports</a>
-                    <a href="#"><i class="fas fa-cog mr-2"></i>Settings</a>
-                    <a href="#"><i class="fas fa-sign-out-alt mr-2"></i>Logout</a>
+                    <a href="#dashboard" class="active" data-toggle="tab"><i class="fas fa-tachometer-alt mr-2"></i>Dashboard</a>
+                    <a href="#products" data-toggle="tab"><i class="fas fa-box mr-2"></i>Manage Products</a>
+                    <a href="#orders" data-toggle="tab"><i class="fas fa-shopping-cart mr-2"></i>Manage Orders</a>
+                    <a href="#users" data-toggle="tab"><i class="fas fa-users mr-2"></i>Manage Users</a>
+                    <a href="#reports" data-toggle="tab"><i class="fas fa-chart-bar mr-2"></i>Reports</a>
+                    <a href="#settings" data-toggle="tab"><i class="fas fa-cog mr-2"></i>Settings</a>
+                    <a href="logout.html"><i class="fas fa-sign-out-alt mr-2"></i>Logout</a>
                 </div>
-</div>
+            </div>
             <div class="col-lg-10 admin-content">
-    <h1>Admin Dashboard</h1>
-    <p>Welcome to the admin dashboard!</p>
-    <!-- Add more dashboard content here -->
+                <div class="tab-content">
+                    <!-- Dashboard Tab -->
+                    <div class="tab-pane fade show active" id="dashboard">
+                        <h1>Admin Dashboard</h1>
+                        <div class="row mb-4">
+                            <div class="col-md-3">
+                                <div class="card bg-primary text-white">
+                                    <div class="card-body">
+                                        <h5>Total Orders</h5>
+                                        <h2>150</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card bg-success text-white">
+                                    <div class="card-body">
+                                        <h5>Total Revenue</h5>
+                                        <h2>$15,000</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card bg-info text-white">
+                                    <div class="card-body">
+                                        <h5>Total Users</h5>
+                                        <h2>1,250</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card bg-warning text-white">
+                                    <div class="card-body">
+                                        <h5>Total Products</h5>
+                                        <h2>450</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Products Tab -->
+                    <div class="tab-pane fade" id="products">
+                        <h2>Manage Products</h2>
+                        <div class="mb-3">
+                            <button class="btn btn-primary" data-toggle="modal" data-target="#addProductModal">
+                                <i class="fas fa-plus mr-2"></i>Add New Product
+                            </button>
+                        </div>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Product Name</th>
+                                    <th>Category</th>
+                                    <th>Price</th>
+                                    <th>Stock</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Sample product rows -->
+                                <tr>
+                                    <td>1</td>
+                                    <td>Gold Ore</td>
+                                    <td>Minerals</td>
+                                    <td>$1,200</td>
+                                    <td>50</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-info"><i class="fas fa-edit"></i></button>
+                                        <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Orders Tab -->
+                    <div class="tab-pane fade" id="orders">
+                        <h2>Manage Orders</h2>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer</th>
+                                    <th>Date</th>
+                                    <th>Total</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#ORD001</td>
+                                    <td>John Doe</td>
+                                    <td>2024-03-20</td>
+                                    <td>$2,500</td>
+                                    <td><span class="badge badge-success">Completed</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-info"><i class="fas fa-eye"></i></button>
+                                        <button class="btn btn-sm btn-warning"><i class="fas fa-print"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Users Tab -->
+                    <div class="tab-pane fade" id="users">
+                        <h2>Manage Users</h2>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Role</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>John Doe</td>
+                                    <td>john@example.com</td>
+                                    <td>Customer</td>
+                                    <td><span class="badge badge-success">Active</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-info"><i class="fas fa-edit"></i></button>
+                                        <button class="btn btn-sm btn-danger"><i class="fas fa-ban"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Reports Tab -->
+                    <div class="tab-pane fade" id="reports">
+                        <h2>Reports</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        Sales Report
+                                    </div>
+                                    <div class="card-body">
+                                        <canvas id="salesChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        Top Products
+                                    </div>
+                                    <div class="card-body">
+                                        <canvas id="productsChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 </div>
+
+                    <!-- Settings Tab -->
+                    <div class="tab-pane fade" id="settings">
+                        <h2>Settings</h2>
+                        <div class="card">
+                            <div class="card-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label>Site Title</label>
+                                        <input type="text" class="form-control" value="Raw to Riches Africa">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Admin Email</label>
+                                        <input type="email" class="form-control" value="admin@rawtorichesafrica.com">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Currency</label>
+                                        <select class="form-control">
+                                            <option>USD ($)</option>
+                                            <option>EUR (€)</option>
+                                            <option>GBP (£)</option>
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!-- Admin Content End -->
+
+    <!-- Add Product Modal -->
+    <div class="modal fade" id="addProductModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add New Product</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label>Product Name</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Category</label>
+                            <select class="form-control">
+                                <option>Minerals</option>
+                                <option>Agricultural Products</option>
+                                <option>Timber</option>
+                                <option>Oil</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Price</label>
+                            <input type="number" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Stock</label>
+                            <input type="number" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Product Image</label>
+                            <input type="file" class="form-control-file">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Add Product</button>
+                </div>
+            </div>
+        </div>
+</div>
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-secondary mt-5 pt-5">
@@ -236,6 +473,35 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-</body>
 
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Sales Chart
+        new Chart(document.getElementById('salesChart'), {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Sales',
+                    data: [12000, 19000, 15000, 25000, 22000, 30000],
+                    borderColor: 'rgb(75, 192, 192)',
+                    tension: 0.1
+                }]
+            }
+        });
+
+        // Products Chart
+        new Chart(document.getElementById('productsChart'), {
+            type: 'pie',
+            data: {
+                labels: ['Gold Ore', 'Diamond', 'Timber', 'Coffee Beans'],
+                datasets: [{
+                    data: [30, 20, 25, 25],
+                    backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0']
+                }]
+            }
+        });
+    </script>
+</body>
 </html>
