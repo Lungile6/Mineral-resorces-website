@@ -95,7 +95,7 @@ curl -X POST http://localhost:5000/api/auth/login \
 
 ## Getting Started (Production)
 To begin exploring our offerings:
-1. Visit our website: [Raw to Richies Africa](http://www.rawtorichiesafrica.com)
+1. Visit our website: [Raw to Richies Africa]([http://www.rawtorichiesafrica.com](https://lungile6.github.io/Mineral-resorces-website/))
 2. Browse through the product categories or use the search function to find specific items.
 3. Create an account to manage your orders and track shipments.
 4. Add items to your cart and proceed to checkout for a secure payment experience.
